@@ -18,8 +18,8 @@ export function customElement(name) {
 
 function render(h) {
   var script = document.createElement('script');
-  script.type = 'module';
-  script.innerHTML = h;
+  // script.type = 'module';
+  script.src = URL.createObjectURL(new Blob([h.replace(/(\<.*\>)/g, '$1')]));
   document.getElementsByTagName('head')[0].appendChild(script);
   // return h;
 }

@@ -20,7 +20,7 @@ template.innerHTML = /*html*/ `
         user-select:none;
         -ms-touch-action:manipulation;
         touch-action:manipulation;
-        height:32px;
+        height:22px;
         padding:4px 15px;
         font-size:14px;
         border-radius:2px;
@@ -28,24 +28,14 @@ template.innerHTML = /*html*/ `
         background:#fff;
         border:1px solid #d9d9d9
       }
-      :host([hidden]) {
-        display: none;
-      }
-      :host([checked]) {
-        background: url('https://googlechromelabs.github.io/howto-components/images/checked-checkbox.svg') no-repeat;
-        background-size: contain;
-      }
-      :host([disabled]) {
-        background:
-          url('https://googlechromelabs.github.io/howto-components/images/unchecked-checkbox-disabled.svg') no-repeat;
-        background-size: contain;
-      }
-      :host([checked][disabled]) {
-        background:
-          url('https://googlechromelabs.github.io/howto-components/images/checked-checkbox-disabled.svg') no-repeat;
-        background-size: contain;
+      :host(:focus),
+      :host(:hover) {
+        color:#40a9ff;
+        background:#fff;
+        border-color:#40a9ff
       }
     </style>
+    test
   `;
 class Button extends HTMLElement {
   constructor() {
